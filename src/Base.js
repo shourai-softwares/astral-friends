@@ -1,10 +1,28 @@
 import React from 'react';
-import { createSwitchNavigator, createDrawerNavigator, createAppContainer } from 'react-navigation';
+import {
+  createAppContainer,
+  createDrawerNavigator,
+  createMaterialTopTabNavigator,
+  createSwitchNavigator,
+  createStackNavigator,
+} from 'react-navigation';
 import DashboardScreen from './containers/DashboardScreen';
+import MapScreen from './containers/MapScreen';
 import WelcomeScreen from './containers/WelcomeScreen';
 
-const MainArea = createDrawerNavigator({
+const DashboardNavigator = createMaterialTopTabNavigator({
   DashboardScreen,
+  MapScreen,
+});
+
+const MainArea = createStackNavigator({
+  DashboardNavigator: {
+    screen: DashboardNavigator,
+    navigationOptions: () => ({
+      title: 'Dash',
+      headerStyle: { backgroundColor: '#5eaeff' },
+    }),
+  },
 });
 
 const BaseNavigation = createSwitchNavigator({
