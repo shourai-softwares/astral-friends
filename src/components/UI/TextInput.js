@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components/native';
 import { TextInput, View } from 'react-native';
 
-const StyledTextInput = ({ style }) => (
+const StyledTextInput = ({ style, ...rest }) => (
   <View style={style}>
-    <TextInput />
+    <TextInput {...rest} />
   </View>
 );
 
