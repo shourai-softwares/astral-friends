@@ -12,6 +12,8 @@ import WelcomeScreen from './containers/WelcomeScreen';
 const DashboardNavigator = createBottomTabNavigator({
   DashboardScreen,
   MapScreen,
+  FriendsScreen: MapScreen,
+  ProfileScreen: MapScreen,
 });
 
 const MainArea = createStackNavigator({
