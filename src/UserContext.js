@@ -31,4 +31,18 @@ export class UserProvider extends PureComponent {
   }
 }
 
+export const withUser = (ChildComponent) => {
+  return ({ ...args }) => (
+    <UserContext.Consumer>
+      {({ user, updateUser }) => (
+        <ChildComponent
+          user={user}
+          updateUser={updateUser}
+          {...args}
+        />
+      )}
+    </UserContext.Consumer>
+  )
+};
+
 export default UserContext;
