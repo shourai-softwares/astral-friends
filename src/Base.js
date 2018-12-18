@@ -7,12 +7,13 @@ import {
 } from 'react-navigation';
 import DashboardScreen from './containers/DashboardScreen';
 import MapScreen from './containers/MapScreen';
+import FriendsScreen from './containers/FriendsScreen';
 import WelcomeScreen from './containers/WelcomeScreen';
 
 const DashboardNavigator = createBottomTabNavigator({
   DashboardScreen,
   MapScreen,
-  FriendsScreen: MapScreen,
+  FriendsScreen,
   ProfileScreen: MapScreen,
 });
 
